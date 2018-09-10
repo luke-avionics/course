@@ -19,7 +19,7 @@ mat.hold(True)
 #same mehod as computing least square problem
 a=(np.matmul(np.transpose(x),y)+np.matmul(np.transpose(y),x))*1.0/(2*np.matmul(np.transpose(x),x))
 f=[a*i for i in x]
-mat.plot(x,f,'ro')
+mat.plot(x,f,linewidth=3.0,color='r')
 
 y2=[]
 for i in range(0,len(x)):
@@ -35,6 +35,6 @@ for i in range(0,len(x)):
 y2=np.reshape(y2,[len(y2),1])
 a_ls=np.matmul(np.matmul(inv(np.matmul(np.transpose(X),X)),np.transpose(X)),y2)
 f2=[a_ls[0]+a_ls[1]*i+a_ls[2]*i**2+a_ls[3]*i**3+a_ls[4]*i**4 for i in x]
-mat.plot(x,f2)
+mat.plot(x,f2,linewidth=3.0,color='r')
 mat.show()
 
